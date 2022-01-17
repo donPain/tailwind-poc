@@ -55,7 +55,7 @@
                 </tr>
               </thead>
               <tbody class="bg-white divide-y divide-gray-200">
-                <TableItem></TableItem>
+                <TableItem :scheduleId="1"></TableItem>
                 <TableItem></TableItem>
                 <TableItem></TableItem>
                 <TableItem></TableItem>
