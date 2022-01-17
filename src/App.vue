@@ -1,27 +1,15 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png" />
-  <HelloWorld msg="Welcome to Your Vue.js + TypeScript App" />
+  <ReportScheduleList></ReportScheduleList>
 </template>
 
 <script lang="ts">
+import "./styles/app.css";
 import { defineComponent } from "vue";
-import HelloWorld from "./components/HelloWorld.vue";
+import ReportScheduleList from "@/components/ReportScheduleList.vue";
+// import ReportRegister from "@/components/ReportRegister.vue";
 
 export default defineComponent({
   name: "App",
-  components: {
-    HelloWorld,
-  },
+  components: { ReportScheduleList },
 });
 </script>
-
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
