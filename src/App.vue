@@ -5,7 +5,7 @@
 <script lang="ts">
 import "./styles/app.css";
 import { defineComponent } from "vue";
-import ReportScheduleList from "@/components/ReportScheduleList.vue";
+import ReportScheduleList from "@/components/ScheduleReportList/ReportScheduleList.vue";
 // import ReportRegister from "@/components/ReportRegister.vue";
 
 export default defineComponent({
