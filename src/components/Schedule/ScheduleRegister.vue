@@ -46,49 +46,48 @@
                   <option>Specific</option>
                 </select>
               </div>
-
-              <div class="col-span-6 sm:col-span-4">
-                <label
-                  for="email-address"
-                  class="block text-sm font-medium text-gray-700"
-                  >Time</label
-                >
-                <div class="mt-0 p-3 w-40 bg-white rounded-md shadow-md">
-                  <div class="flex">
-                    <select
-                      name="hours"
-                      class="bg-transparent text-md appearance-none outline-none"
-                    >
-                      <option value="1">1</option>
-                      <option value="2">2</option>
-                      <option value="3">3</option>
-                      <option value="4">4</option>
-                      <option value="5">5</option>
-                      <option value="6">6</option>
-                      <option value="7">7</option>
-                      <option value="8">8</option>
-                      <option value="9">9</option>
-                      <option value="10">10</option>
-                      <option value="11">10</option>
-                      <option value="12">12</option>
-                    </select>
-                    <span class="text-xl mr-3">:</span>
-                    <select
-                      name="minutes"
-                      class="bg-transparent text-md appearance-none outline-none mr-4"
-                    >
-                      <option value="0">00</option>
-                      <option value="30">30</option>
-                    </select>
-                    <select
-                      name="ampm"
-                      class="bg-transparent text-md appearance-none outline-none"
-                      v-if="genTypeName == 'Specific'"
-                    >
-                      <option value="am">AM</option>
-                      <option value="pm">PM</option>
-                    </select>
-                  </div>
+            </div>
+            <div class="col-span-6 sm:col-span-4">
+              <label class="block text-sm font-medium text-gray-700"
+                >Time</label
+              >
+              <div
+                class="mt-0 h-10 pl-2 border border-gray-300 pt-1 w-28 bg-white rounded-xl shadow-md"
+              >
+                <div class="flex">
+                  <select
+                    name="hours"
+                    class="mr-2 bg-transparent text-md appearance-none outline-none"
+                  >
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                    <option value="11">10</option>
+                    <option value="12">12</option>
+                  </select>
+                  <span class="text-xl mr-3">:</span>
+                  <select
+                    name="minutes"
+                    class="bg-transparent text-md appearance-none outline-none mr-2"
+                  >
+                    <option value="0">00</option>
+                    <option value="30">30</option>
+                  </select>
+                  <select
+                    name="ampm"
+                    class="bg-transparent text-md appearance-none outline-none"
+                    v-if="genTypeName == 'Specific'"
+                  >
+                    <option value="am">AM</option>
+                    <option value="pm">PM</option>
+                  </select>
                 </div>
               </div>
             </div>
@@ -116,7 +115,8 @@
 import { defineComponent } from "vue";
 
 export default defineComponent({
-  name: "ReportRegister",
+  name: "ScheduleRegister",
+
   data() {
     return { genTypeName: "Periodically" };
   },
