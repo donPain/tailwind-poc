@@ -9,6 +9,9 @@
       <div class="mt-5 md:mt-0 md:col-span-2">
         <div class="shadow overflow-hidden sm:rounded-md">
           <div class="px-4 py-5 bg-white sm:p-6 rounded-2xl">
+            <div v-if="isLoading" class="div-center">
+              <VueLoader class="ml-20"></VueLoader>
+            </div>
             <div class="grid grid-cols-6 gap-6">
               <div class="col-span-6 sm:col-span-3">
                 <div class="col-span-6 sm:col-span-3">
@@ -48,37 +51,30 @@
               </div>
             </div>
             <div class="col-span-6 sm:col-span-4">
-              <label class="block text-sm font-medium text-gray-700"
+              <label class="mt-3 block text-sm font-medium text-gray-700"
                 >Time</label
               >
               <div
-                class="mt-0 h-10 pl-2 border border-gray-300 pt-1 w-28 bg-white rounded-xl shadow-md"
+                class="h-10 pl-2 border border-gray-300 pt-1 w-28 bg-white shadow-md rounded-md"
               >
                 <div class="flex">
                   <select
                     name="hours"
                     class="mr-2 bg-transparent text-md appearance-none outline-none"
                   >
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                    <option value="6">6</option>
-                    <option value="7">7</option>
-                    <option value="8">8</option>
-                    <option value="9">9</option>
-                    <option value="10">10</option>
-                    <option value="11">10</option>
-                    <option value="12">12</option>
+                    <option v-for="index in 12" :key="index" value="num">
+                      {{ index }}
+                    </option>
                   </select>
                   <span class="text-xl mr-3">:</span>
                   <select
                     name="minutes"
                     class="bg-transparent text-md appearance-none outline-none mr-2"
                   >
-                    <option value="0">00</option>
-                    <option value="30">30</option>
+                    <option value="00">00</option>
+                    <option v-for="index in 59" :key="index" value="index">
+                      {{ index < 10 ? "0" + index : index }}
+                    </option>
                   </select>
                   <select
                     name="ampm"
@@ -100,6 +96,7 @@
               </button>
               <button
                 class="inline-flex justify-center py-2 px-4 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 mr-30"
+                @click="saveClick"
               >
                 Save
               </button>
@@ -113,12 +110,14 @@
 
 <script lang="ts">
 import { defineComponent } from "vue";
+import VueLoader from "@/components/Shared/VueLoader.vue";
 
 export default defineComponent({
   name: "ScheduleRegister",
+  components: { VueLoader },
 
   data() {
-    return { genTypeName: "Periodically" };
+    return { genTypeName: "Periodically", isLoading: false };
   },
 
   methods: {
@@ -127,6 +126,9 @@ export default defineComponent({
     },
     setOptions() {
       console.log("show");
+    },
+    saveClick() {
+      this.isLoading = true;
     },
   },
 });
@@ -143,5 +145,16 @@ export default defineComponent({
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.div-center {
+  display: inline-block;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 200px;
+  height: 100px;
+  margin: auto;
 }
 </style>
