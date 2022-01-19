@@ -27,7 +27,7 @@
       </p>
     </td>
     <td class="px-5 py-5 bg-white text-sm">
-      <p class="text-gray-900 whitespace-no-wrap">
+      <p class="text-gray-900 whitespace-no-wrap text-center">
         {{ reportObject.reportMaxGenDay }}
       </p>
     </td>

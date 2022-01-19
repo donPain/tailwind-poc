@@ -126,42 +126,18 @@
                       <table class="min-w-full leading-normal">
                         <thead>
                           <tr>
-                            <th
-                              class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider"
-                            >
-                              Id
-                            </th>
-                            <th
-                              class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider"
-                            >
-                              Report Name
-                            </th>
+                            <th class="th">Id</th>
+                            <th class="th">Report Name</th>
 
                             <th
                               class="px-5 py-3 border-b-2 borderqgray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider"
                             >
                               Generation Period
                             </th>
-                            <th
-                              class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider"
-                            >
-                              Minimum Time
-                            </th>
-                            <th
-                              class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider"
-                            >
-                              Maximum Daily Generations
-                            </th>
-                            <th
-                              class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider"
-                            >
-                              Status
-                            </th>
-                            <th
-                              class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider"
-                            >
-                              Action
-                            </th>
+                            <th class="th">Minimum Time</th>
+                            <th class="th">Maximum Daily Generations</th>
+                            <th class="th">Status</th>
+                            <th class="th">Action</th>
                           </tr>
                         </thead>
                         <tbody
@@ -276,6 +252,9 @@ export default defineComponent({
 </script>
 
 <style>
+.th {
+  @apply px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider;
+}
 .fade-enter-active,
 .fade-leave-active {
   transition: opacity 0.4s ease;
