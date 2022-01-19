@@ -54,7 +54,15 @@
               <label class="mt-3 block text-sm font-medium text-gray-700"
                 >Time</label
               >
-              <div
+              <input
+                class="col-span-3 h-9 appearance-none block w-1/2.6 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                id="gen-period-start"
+                type="time"
+                min="1:00"
+                max="12:00"
+                placeholder="1:00"
+              />
+              <!-- <div
                 class="h-10 pl-2 border border-gray-300 pt-1 w-28 bg-white shadow-md rounded-md"
               >
                 <div class="flex">
@@ -85,7 +93,7 @@
                     <option value="pm">PM</option>
                   </select>
                 </div>
-              </div>
+              </div> -->
             </div>
             <div class="px-4 py-3 bg-white text-right sm:px-6">
               <button
