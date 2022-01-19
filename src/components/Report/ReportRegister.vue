@@ -1,5 +1,5 @@
 <template>
-  <div class="modal-backdrop self-center">
+  <div class="main-div">
     <div class="hidden sm:block" aria-hidden="true">
       <div class="py-5">
         <div class="border-t border-gray-200" />
@@ -51,7 +51,9 @@
                       id="max-daily-gen"
                       type="number"
                       placeholder="3"
+                      min="1"
                       max="4"
+                      q
                     />
                   </div>
                 </div>
@@ -129,6 +131,16 @@ export default defineComponent({
 </script>
 
 <style>
+.main-div {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .modal-backdrop {
   position: fixed;
   top: 0;

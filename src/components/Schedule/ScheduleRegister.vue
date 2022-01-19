@@ -1,5 +1,5 @@
 <template>
-  <div class="modal-backdrop self-center">
+  <div class="main-div">
     <div class="hidden sm:block" aria-hidden="true">
       <div class="py-5">
         <div class="border-t border-gray-200" />
@@ -15,11 +15,7 @@
             <div class="grid grid-cols-6 gap-6">
               <div class="col-span-6 sm:col-span-3">
                 <div class="col-span-6 sm:col-span-3">
-                  <label
-                    for="reports"
-                    class="block text-sm font-medium text-gray-700"
-                    >Report</label
-                  >
+                  <label for="reports" class="label">Report</label>
                   <select
                     id="ReportId"
                     name="ReportName"
@@ -33,11 +29,7 @@
               </div>
 
               <div class="col-span-6 sm:col-span-3">
-                <label
-                  for="genTypes"
-                  class="block text-sm font-medium text-gray-700"
-                  >Generation Type</label
-                >
+                <label for="genTypes" class="label">Generation Type</label>
                 <select
                   id="genTypeId"
                   name="genTypeName"
@@ -50,10 +42,8 @@
                 </select>
               </div>
             </div>
-            <div class="col-span-6 sm:col-span-4">
-              <label class="mt-3 block text-sm font-medium text-gray-700"
-                >Time</label
-              >
+            <div class="col-span-6 sm:col-span-4 pt-2">
+              <label class="label">Time</label>
               <input
                 class="col-span-3 h-9 appearance-none block w-1/2.6 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
                 id="gen-period-start"
@@ -143,6 +133,16 @@ export default defineComponent({
 </script>
 
 <style>
+.main-div {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .modal-backdrop {
   position: fixed;
   top: 0;
@@ -164,5 +164,8 @@ export default defineComponent({
   width: 200px;
   height: 100px;
   margin: auto;
+}
+.label {
+  @apply block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2;
 }
 </style>

@@ -185,14 +185,31 @@
           </div>
         </div>
       </div>
-      <ScheduleRegister
-        v-show="isShowScheduleModalVisible"
-        @Close="closeScheduleModal"
-      ></ScheduleRegister>
-      <ReportRegister
-        v-show="isShowReportModalVisible"
-        @Close="closeReportModal"
-      ></ReportRegister>
+
+      <transition name="fade">
+        <div
+          class="modal-backdrop self-center"
+          v-show="isShowScheduleModalVisible"
+        >
+          <transition name="bounce">
+            <ScheduleRegister
+              v-show="isShowScheduleModalVisible"
+              @Close="closeScheduleModal"
+            ></ScheduleRegister>
+          </transition></div
+      ></transition>
+      <transition name="fade">
+        <div
+          class="modal-backdrop self-center"
+          v-show="isShowReportModalVisible"
+        >
+          <transition name="bounce">
+            <ReportList
+              v-show="isShowReportModalVisible"
+              @Close="closeReportModal"
+            ></ReportList>
+          </transition></div
+      ></transition>
     </div>
   </div>
 </template>
@@ -201,11 +218,11 @@
 import { defineComponent } from "vue";
 import TableItem from "@/components/Schedule/ScheduleItem.vue";
 import ScheduleRegister from "@/components/Schedule/ScheduleRegister.vue";
-import ReportRegister from "@/components/Report/ReportRegister.vue";
+import ReportList from "@/components/Report/ReportList.vue";
 
 export default defineComponent({
   name: "ScheduleList",
-  components: { TableItem, ScheduleRegister, ReportRegister },
+  components: { TableItem, ScheduleRegister, ReportList },
   data() {
     return {
       isShowScheduleModalVisible: false,
@@ -285,3 +302,32 @@ export default defineComponent({
   },
 });
 </script>
+
+<style>
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.4s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0.5s ease;
+}
+.bounce-enter-active {
+  animation: bounce-in 0.3s;
+}
+.bounce-leave-active {
+  animation: bounce-in 0.3s reverse;
+}
+@keyframes bounce-in {
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+</style>
