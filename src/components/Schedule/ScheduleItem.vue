@@ -2,8 +2,7 @@
   <tr>
     <td class="px-5 py-5 bg-white text-sm">
       <div class="flex items-center">
-        <div class="flex-shrink-0 w-10 h-10"></div>
-        <div class="ml-3">
+        <div class="text-left">
           <p class="text-gray-900 whitespace-no-wrap">
             {{ scheduleObject.scheduleId }}
           </p>
@@ -62,7 +61,7 @@
 import { defineComponent } from "vue";
 
 export default defineComponent({
-  name: "TableItem",
+  name: "ScheduleItem",
   props: {
     scheduleObject: {
       type: Object,

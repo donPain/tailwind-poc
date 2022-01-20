@@ -111,7 +111,7 @@
                       <table class="min-w-full leading-normal">
                         <thead>
                           <tr>
-                            <th class="th">Id</th>
+                            <th class="th w-3">Id</th>
                             <th class="th">Report Name</th>
                             <th class="th">Status</th>
                             <th class="th">Gen Type</th>
@@ -124,9 +124,9 @@
                           v-for="(scheduleObject, i) in scheduleArray"
                           :key="i"
                         >
-                          <TableItem
+                          <ScheduleItem
                             :scheduleObject="scheduleObject"
-                          ></TableItem>
+                          ></ScheduleItem>
                         </tbody>
                       </table>
                       <div
@@ -187,13 +187,13 @@
 
 <script lang="ts">
 import { defineComponent } from "vue";
-import TableItem from "@/components/Schedule/ScheduleItem.vue";
+import ScheduleItem from "@/components/Schedule/ScheduleItem.vue";
 import ScheduleRegister from "@/components/Schedule/ScheduleRegister.vue";
 import ReportList from "@/components/Report/ReportList.vue";
 
 export default defineComponent({
   name: "ScheduleList",
-  components: { TableItem, ScheduleRegister, ReportList },
+  components: { ScheduleItem, ScheduleRegister, ReportList },
   data() {
     return {
       isShowScheduleModalVisible: false,
